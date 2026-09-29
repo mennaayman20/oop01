@@ -1,4 +1,5 @@
-﻿using System.Numerics;
+﻿using System.ComponentModel.DataAnnotations;
+using System.Numerics;
 
 namespace oop01
 {
@@ -14,6 +15,14 @@ namespace oop01
             #region Q1 b) What happens when a Customer variable is copied into another variable and one variable modifies the object?
             //a reference copy of the class instance is created
             //.Modifying the copied variable will affect the original variable.
+            #endregion
+
+            #region Q2  a) Identify at least three problems with this design from an encapsulation perspective.
+            //Public Fields, Lack of Data Validation ,Immutability
+            #endregion
+
+            #region Q2 b) How can private fields and public properties improve this design? 
+            //Validation,Protection,Controlled Access Control
             #endregion
         }
     }
