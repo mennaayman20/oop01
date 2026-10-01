@@ -32,8 +32,6 @@ namespace oop01
                 }
             }
         }
-
-
         public InternationalShipment(
             string trackingCode,
             string description,
@@ -48,7 +46,8 @@ namespace oop01
             CustomsFee = customsFee;
         }
 
+        //Polymorphism 
         public override decimal EstimatedCost => base.EstimatedCost + CustomsFee;
-
+        
     }
 }
