@@ -59,7 +59,7 @@ namespace oop01
                 int bNo = int.Parse(Console.ReadLine());
 
                 DeliveryAddress address = new DeliveryAddress(city, street, bNo);
-                Shipment shipment = new Shipment(code, desc, weight, fee, address);
+                Shipment shipment = new Shipment(code, desc, (decimal)weight, fee, address);
 
                 if (center.AddShipment(shipment))
                 {

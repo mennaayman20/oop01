@@ -5,7 +5,7 @@
         // Private Fields
         public string _trackingCode;
         public string _description;
-        public double _weight;
+        public decimal _weight;
         public decimal _deliveryFee;
         public DeliveryAddress Destination { get; set; }
         
@@ -13,17 +13,17 @@
         public Shipment() { }
 
         // constructor overloading
-        public Shipment(string trackingCode, string description, double weight, decimal deliveryFee, DeliveryAddress destination)
+        public Shipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination)
         {
-            _trackingCode = trackingCode;
-            _description = description;
-            _weight = weight;
-            _deliveryFee = deliveryFee;
+            _trackingCode = string.IsNullOrWhiteSpace(trackingCode) ? "UNKNOWN" : trackingCode;
+            _description = !string.IsNullOrWhiteSpace(description) ? description : "Unknown";
+            _weight = weight > 0 ? weight : 1;
+            _deliveryFee = deliveryFee > 0 ? deliveryFee : 50;
             Destination = destination;
         }
 
         //UpdateDeliveryFee() PrintShipment() =>>>already here
-         
+
 
         // Properties with Encapsulation & Validation
 
@@ -44,7 +44,7 @@
         }
 
         // Read/Write with Validation
-        public double Weight
+        public decimal Weight
         {
             get => _weight;
             set
@@ -70,7 +70,7 @@
         }
 
 
-        public decimal EstimatedCost => DeliveryFee + (decimal)(Weight * 5);
+        public virtual decimal EstimatedCost => DeliveryFee + (decimal)(Weight * 5);
 
 
         public Shipment(string trackingCode)
