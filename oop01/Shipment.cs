@@ -23,14 +23,7 @@
         }
 
         //UpdateDeliveryFee() PrintShipment() =>>>already here
-
-
-
-
-
-
-
-
+         
 
         // Properties with Encapsulation & Validation
 
