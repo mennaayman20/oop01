@@ -1,7 +1,7 @@
 ﻿
 namespace oop01
 {
-    public struct DeliveryCenter
+    public class DeliveryCenter
     {
         private Shipment[] _shipments;
         private int _count;

@@ -1,14 +1,36 @@
-﻿
-
-namespace oop01
+﻿namespace oop01
 {
-    public struct Shipment
+    public class Shipment
     {
         // Private Fields
-        private string _trackingCode;
-        private string _description;
-        private double _weight;
-        private decimal _deliveryFee;
+        public string _trackingCode;
+        public string _description;
+        public double _weight;
+        public decimal _deliveryFee;
+        public DeliveryAddress Destination { get; set; }
+        
+        //default constructor
+        public Shipment() { }
+
+        // constructor overloading
+        public Shipment(string trackingCode, string description, double weight, decimal deliveryFee, DeliveryAddress destination)
+        {
+            _trackingCode = trackingCode;
+            _description = description;
+            _weight = weight;
+            _deliveryFee = deliveryFee;
+            Destination = destination;
+        }
+
+        //UpdateDeliveryFee() PrintShipment() =>>>already here
+
+
+
+
+
+
+
+
 
         // Properties with Encapsulation & Validation
 
@@ -54,7 +76,6 @@ namespace oop01
             }
         }
 
-        public DeliveryAddress Destination { get; set; }
 
         public decimal EstimatedCost => DeliveryFee + (decimal)(Weight * 5);
 
@@ -77,24 +98,24 @@ namespace oop01
         }
 
  
-        public Shipment(string trackingCode, string description, double weight, decimal deliveryFee, DeliveryAddress destination)
-        {
-            if (string.IsNullOrWhiteSpace(trackingCode))
-            {
-                _trackingCode = "UNKNOWN";
-            }
-            else
-            {
-                _trackingCode = trackingCode;
-            }
+        //public Shipment(string trackingCode, string description, double weight, decimal deliveryFee, DeliveryAddress destination)
+        //{
+        //    if (string.IsNullOrWhiteSpace(trackingCode))
+        //    {
+        //        _trackingCode = "UNKNOWN";
+        //    }
+        //    else
+        //    {
+        //        _trackingCode = trackingCode;
+        //    }
 
-            _description = !string.IsNullOrWhiteSpace(description) ? description : "Unknown";
-            _weight = weight > 0 ? weight : 1;
-            _deliveryFee = deliveryFee > 0 ? deliveryFee : 50;
-            Destination = destination;
-        }
+        //    _description = !string.IsNullOrWhiteSpace(description) ? description : "Unknown";
+        //    _weight = weight > 0 ? weight : 1;
+        //    _deliveryFee = deliveryFee > 0 ? deliveryFee : 50;
+        //    Destination = destination;
+        //}
 
- 
+         //update delivery fee method
         public void UpdateDeliveryFee(decimal newFee)
         {
             if (newFee > 0)
