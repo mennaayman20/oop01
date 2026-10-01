@@ -111,6 +111,9 @@ namespace oop01
             //struct=> Value type, does not support inheritance, allocated on the stack suitable for small data.
             #endregion
 
+            #region Q1 b) ) Why are classes more suitable than structs for large applications?
+            // Classes are reference types and are allocated on the heap, making them more suitable for large applications where memory management is crucial. They also support inheritance and polymorphism, which are essential for building scalable and maintainable applications.
+            #endregion 
 
 
 
