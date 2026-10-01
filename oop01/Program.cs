@@ -113,8 +113,25 @@ namespace oop01
 
             #region Q1 b) ) Why are classes more suitable than structs for large applications?
             // Classes are reference types and are allocated on the heap, making them more suitable for large applications where memory management is crucial. They also support inheritance and polymorphism, which are essential for building scalable and maintainable applications.
-            #endregion 
+            #endregion
 
+            #region  a) Which class is the parent class? 
+            //Shipment
+            #endregion
+
+
+            #region b) Which class is the child class?
+            //ExpressShipment
+            #endregion
+
+            #region c) What members are inherited by ExpressShipment?
+            //ExpressShipment inherits all public and protected members of the Shipment class, including properties, methods, and fields.
+            #endregion
+
+            #region d) Why is inheritance better than duplicating the same code in multiple classes? 
+            // Inheritance promotes code reusability and maintainability. By inheriting from a parent class, child classes can reuse existing code,
+            // reducing redundancy and the potential for errors. It also allows for easier updates and modifications, as changes made in the parent class automatically propagate to child classes.
+            #endregion
 
 
 
