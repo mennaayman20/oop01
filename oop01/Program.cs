@@ -104,6 +104,36 @@ namespace oop01
 
             #endregion
 
+            // G-NET-100-OOP-02
+
+            #region Q1 a) What is the difference between a class and a struct? 
+            //class=> Reference type, supports inheritance, allocated on the heap,suitable for large data.
+            //struct=> Value type, does not support inheritance, allocated on the stack suitable for small data.
+            #endregion
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
     }
 }
