@@ -159,8 +159,10 @@ namespace oop01
         #endregion
 
         #region c)  Can a sealed method be overridden? Why?
-        // No, a sealed method cannot be overridden. The purpose of sealing a method is to prevent further overriding in derived classes. This ensures that the implementation of the method remains fixed and cannot be changed by subclasses, which can be important for maintaining consistent behavior and preventing unintended side effects in the class hierarchy.
+        // No, a sealed method cannot be overridden.
+        // The purpose of sealing a method is to prevent further overriding in derived classes. This ensures that the implementation of the method remains fixed and cannot be changed by subclasses, which can be important for maintaining consistent behavior and preventing unintended side effects in the class hierarchy.
         #endregion
+
 
 
 

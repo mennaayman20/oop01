@@ -69,7 +69,7 @@
             }
         }
 
-
+        //Convert to a virtual property so each derived class can calculate its own cost.
         public virtual decimal EstimatedCost => DeliveryFee + (decimal)(Weight * 5);
 
 
@@ -117,7 +117,7 @@
             }
         }
 
-
+        //Convert to a virtual method.Every child class will override it
         public virtual void PrintShipment()
         {
             Console.WriteLine($"Tracking Code: {TrackingCode}");
@@ -127,5 +127,17 @@
             Console.WriteLine($"Destination: {Destination.GetFullAddress()}");
             Console.WriteLine($"Estimated Cost: {EstimatedCost} EGP\n");
         }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     }
 }
