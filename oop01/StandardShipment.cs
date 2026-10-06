@@ -1,6 +1,8 @@
-﻿namespace oop01
+﻿using oop01.interfaces;
+
+namespace oop01
 {
-    internal class StandardShipment : Shipment
+    internal class StandardShipment : Shipment , IInsurable
     {
         // Constructor Chaining(base constructor)
         public StandardShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination)
@@ -22,5 +24,12 @@
 
         }
 
+        // Implement IInsurable interface
+        public decimal CalculateInsurance()
+        {
+            return EstimatedCost * 0.05m;
+        }
+
+        public override string GetTrackingStatus() => $"Shipment {TrackingCode} is Ready.";
     }
 }

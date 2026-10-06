@@ -1,6 +1,7 @@
-﻿namespace oop01
+﻿using oop01.interfaces;
+namespace oop01
 {
-    public abstract class Shipment
+    public abstract class Shipment : ITrackable
     {
         // Private Fields
         public string _trackingCode;
@@ -146,8 +147,11 @@
         public abstract void PrintShipment();
 
 
-
-
+        // Implementing the ITrackable interface method
+        public virtual string GetTrackingStatus()
+        {
+            return $"Shipment {TrackingCode} is Ready.";
+        }
 
 
 

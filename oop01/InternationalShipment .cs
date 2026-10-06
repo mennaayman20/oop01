@@ -1,10 +1,11 @@
-﻿using System;
+﻿using oop01.interfaces;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace oop01
 {
-  public class InternationalShipment : Shipment
+  public class InternationalShipment : Shipment, IInsurable
     {
         private string _destinationCountry;
         private decimal _customsFee;
@@ -49,8 +50,12 @@ namespace oop01
 
         //Override EstimatedCost
         public override decimal EstimatedCost => DeliveryFee + (Weight * 5) + CustomsFee;
-  
 
+        // Implement IInsurable interface
+        public decimal CalculateInsurance()
+        {
+            return EstimatedCost * 0.12m;
+        }
 
         public virtual void GenerateCustomsReport()
         {
@@ -69,5 +74,7 @@ namespace oop01
             Console.WriteLine($"Destination Country: {DestinationCountry}");
             Console.WriteLine($"Customs Fee: {CustomsFee:C}");
         }
+
+
     }
 }

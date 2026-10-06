@@ -1,8 +1,9 @@
-﻿using System;
+﻿using oop01.interfaces;
+using System;
 
 namespace oop01
 {
-    public class ExpressShipment : Shipment
+    public class ExpressShipment : Shipment, IInsurable
     {
         private decimal _extraFee;
         public decimal ExtraFee
@@ -24,6 +25,13 @@ namespace oop01
             ExtraFee = _extraFee;
         }
 
+        // Implement IInsurable interface
+        public decimal CalculateInsurance()
+        {
+            return EstimatedCost * 0.08m;
+        }
+
+
         //Override EstimatedCost
         public override decimal EstimatedCost => DeliveryFee + (Weight * 5) + ExtraFee;
 
@@ -38,6 +46,7 @@ namespace oop01
             Console.WriteLine($"Extra Fee: {ExtraFee:C}");
         }
 
+        public override string GetTrackingStatus() => $"Shipment {TrackingCode} is Out for Delivery.";
 
 
 

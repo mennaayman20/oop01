@@ -22,5 +22,7 @@ namespace oop01
             Console.WriteLine($"Destination: {Destination.GetFullAddress()}");
             Console.WriteLine($"Estimated Cost: {EstimatedCost} EGP\n");
         }
+
+        public override string GetTrackingStatus() => $"Shipment {TrackingCode} has been Delivered.";
     }
 }
