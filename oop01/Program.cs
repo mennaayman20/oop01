@@ -136,6 +136,20 @@ namespace oop01
 
         // G-NET-100-OOP-03
 
+        //Q1  Overloading, Overriding, and Binding
+
+        #region a)  What is the difference between Method Overloading and Method Overriding?
+        // Method Overloading: It allows multiple methods in the same class to have the same name but different parameters (different type, number, or order of parameters).
+        //method Overriding: It allows a subclass to provide a specific implementation of a method that is already defined in its superclass. The method in the subclass must have the same name, return type, and parameters as the method in the superclass.
+        #endregion
+
+        #region b)  What is the difference between Static Binding and Dynamic Binding?
+        //static Binding: It occurs at compile time, where the method to be called is determined based on the reference type. It is associated with method overloading and early binding.
+        //Dynamic Binding: It occurs at runtime, where the method to be called is determined based on the actual object type. It is associated with method overriding and late binding.
+        #endregion
+
+
+
 
 
 
