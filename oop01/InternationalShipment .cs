@@ -47,7 +47,7 @@ namespace oop01
             CustomsFee = customsFee;
         }
 
-        //Polymorphism 
+        //Override EstimatedCost
         public override decimal EstimatedCost => base.EstimatedCost + CustomsFee;
         
     }
