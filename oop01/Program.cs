@@ -278,6 +278,24 @@ namespace oop01
 
         #endregion
 
+        //Q2 Abstract Classes vs. Interfaces
+        #region a) What is the difference between an Abstract Class and an Interface?
+        //abstract Class: An abstract class can have both abstract methods(without implementation) and concrete methods(with implementation).
+        // and constructors.Abstract classes are used when there is a common base behavior that multiple derived classes can share.
+        #endregion
+
+        #region b)  When would you choose an Interface instead of an Abstract Class?
+        //  to define a contract that multiple classes can implement, regardless of their position in the class hierarchy.
+        //  Interfaces are ideal for defining capabilities that can be shared across unrelated classes, promoting flexibility and decoupling in your design.
+
+        #endregion
+
+        #region c)  Can a class inherit from multiple abstract classes? Can it implement multiple interfaces?
+        // A class cannot inherit from multiple abstract classes due to the single inheritance model in C#. However,
+        // a class can implement multiple interfaces, allowing it to inherit behavior from multiple sources.
+        #endregion
+
+
 
 
 
