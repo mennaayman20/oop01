@@ -1,6 +1,6 @@
 ﻿namespace oop01
 {
-    public class Shipment
+    public abstract class Shipment
     {
         // Private Fields
         public string _trackingCode;
