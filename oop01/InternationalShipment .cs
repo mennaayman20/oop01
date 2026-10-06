@@ -50,5 +50,11 @@ namespace oop01
         //Override EstimatedCost
         public override decimal EstimatedCost => base.EstimatedCost + CustomsFee;
         
+        public override void PrintShipment()
+        {
+            base.PrintShipment();
+            Console.WriteLine($"Destination Country: {DestinationCountry}");
+            Console.WriteLine($"Customs Fee: {CustomsFee:C}");
+        }
     }
 }

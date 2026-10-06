@@ -8,6 +8,11 @@
         {
         }
 
+        public override void PrintShipment()
+        {
+            base.PrintShipment();
+
+        }
 
     }
 }

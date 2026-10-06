@@ -28,6 +28,11 @@ namespace oop01
         public override decimal EstimatedCost => base.EstimatedCost + ExtraFee;
 
 
+        public override void PrintShipment()
+        {
+            base.PrintShipment();
+            Console.WriteLine($"Extra Fee: {ExtraFee:C}");
+        }
 
 
     }
