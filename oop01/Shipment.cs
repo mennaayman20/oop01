@@ -22,6 +22,20 @@
             Destination = destination;
         }
 
+        //Method Overloading — add two versions of the weight-update method:
+        public void UpdateWeight(decimal newWeight)
+        {
+            if (newWeight > 0)
+            {
+                _weight = newWeight;
+            }
+        }
+
+        public void UpdateWeight(decimal newWeight, decimal extraPackingWeight)
+        { 
+            _weight = newWeight + extraPackingWeight;
+        }
+
         //UpdateDeliveryFee() PrintShipment() =>>>already here
 
 
