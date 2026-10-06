@@ -131,10 +131,9 @@ namespace oop01
             }
 
 
-        }
 
 
-        // G-NET-100-OOP-03
+// G-NET-100-OOP-03
 
         //Q1  Overloading, Overriding, and Binding
 
@@ -163,36 +162,105 @@ namespace oop01
         // The purpose of sealing a method is to prevent further overriding in derived classes. This ensures that the implementation of the method remains fixed and cannot be changed by subclasses, which can be important for maintaining consistent behavior and preventing unintended side effects in the class hierarchy.
         #endregion
 
+        Driver driver = new Driver("Ahmed Mohamed");
+
+        DeliveryCenter centerr = new DeliveryCenter("Cairo Central Hub");
+
+        centerr.Driver = driver;
 
 
+            StandardShipment Standard = new StandardShipment(
+                "SH001",
+                "Books and Stationery",
+                10.0m,
+                50.0m,
+                new DeliveryAddress("123 Main St", "Cairo", 9)
+            );
 
 
+            ExpressShipment Express = new ExpressShipment(
+                "SH002",
+                "Mobile Phone",
+                2.5m,
+                30.0m,
+                new DeliveryAddress("456 Nile St", "Giza", 10),
+                15.0m // ExtraFee
+            );
 
 
+            InternationalShipment International = new InternationalShipment(
+                "SH003",
+                "Laptop",
+                3.0m,
+                100.0m,
+                new DeliveryAddress("789 Berlin Rd", "Berlin", 11),
+                "Germany", // Destination Country
+                50.0m      // CustomsFee
+            );
 
+            center.AddShipment(standard);
+            center.AddShipment(express);
+            center.AddShipment(international);
+            Console.WriteLine("--- Printing All Shipments from Delivery Center ---");
+            center.PrintAllShipments();
 
+            Console.WriteLine("\n--- Printing Details Using DeliveryHelper ---");
+            DeliveryHelper.PrintShipmentDetails(standard);
+            DeliveryHelper.PrintShipmentDetails(express);
+            DeliveryHelper.PrintShipmentDetails(international);
 
+            Console.WriteLine("\n--- Demonstrating UpdateWeight() Overloads ---");
+            Console.WriteLine($"Original Weight: {standard.Weight} kg");
 
+            standard.UpdateWeight(12.5m);
+            Console.WriteLine($"Updated Weight (Direct): {standard.Weight} kg");
 
+            standard.UpdateWeight(12.5m, 1.5m);
+            Console.WriteLine($"Updated Weight (With Extra Packing): {standard.Weight} kg");
 
+           
+            Console.WriteLine("\n--- Printing Mixed Shipment Array (Dynamic Binding Loop) ---");
+            Shipment[] mixedShipments = new Shipment[]
+            {
+                standard,
+                express,
+                international,
+                new CompletedShipment("SH004", "Delivered Parcel", 1.0m, 20.0m, new DeliveryAddress("Cairo", "Egypt",8))
+            };
 
+            foreach (Shipment s in mixedShipments)
+            {
+                // يتم استدعاء الدالة الخاصة بكل نوع تلقائياً في وقت التشغيل (Runtime)
+                s.PrintShipment();
+                Console.WriteLine("------------------------------------------");
+            }
 
+            // l. Demonstrate the sealed class and sealed method (comments or code)
+            // توضيح مفاهيم الـ Sealed Class والـ Sealed Method
+            Console.WriteLine("\n--- Demonstrating Sealed Class & Sealed Method ---");
 
+            // 1. Sealed Class Demonstration:
+            // الكلاس CompletedShipment مغلق بـ sealed وبالتالي لا يمكن الوراثة منه.
+            CompletedShipment completed = new CompletedShipment("SH005", "Finished Order", 5.0m, 40.0m, new DeliveryAddress("Alexandria", "Egypt",11));
+            completed.PrintShipment();
+            // ملاحظة: لو حاولنا كتابة: class SubCompleted : CompletedShipment {} سيعطي الكومبايلر خطأ.
 
+            // 2. Sealed Method Demonstration:
+            // الكلاس PriorityInternationalShipment يحتوي على دالة GenerateCustomsReport() مغلقة بـ sealed override.
+            PriorityInternationalShipment priorityInt = new PriorityInternationalShipment(
+                "SH006",
+                "Medical Equipment",
+                8.0m,
+                200.0m,
+                new DeliveryAddress("Paris St", "Paris", 12),
+                "France",
+                100.0m
+            );
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+            // استدعاء الدالة المختومة
+            priorityInt.GenerateCustomsReport();
+            // ملاحظة: إذا ورث كلاس آخر من PriorityInternationalShipment، لن يستطيع إعادة تعريف (override) لهذه الدالة.
+        }
 
 
 

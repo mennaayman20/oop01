@@ -4,7 +4,7 @@ using System.Text;
 
 namespace oop01
 {
-    internal class InternationalShipment : Shipment
+  public class InternationalShipment : Shipment
     {
         private string _destinationCountry;
         private decimal _customsFee;
@@ -50,6 +50,14 @@ namespace oop01
         //Override EstimatedCost
         public override decimal EstimatedCost => base.EstimatedCost + CustomsFee;
         
+
+        public virtual void GenerateCustomsReport()
+        {
+            Console.WriteLine("Generating standard customs report...");
+        }
+
+
+
         public override void PrintShipment()
         {
             base.PrintShipment();

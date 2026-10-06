@@ -5,6 +5,12 @@ namespace oop01
     {
 
         public string CenterName { get; set; }
+
+        public Driver Driver { get; set; }
+        public DeliveryCenter(string centerName)
+        {
+            CenterName = centerName;
+        }
         private Shipment[] _shipments = new Shipment[20];
         private int _count = 0;
         public DeliveryCenter()
@@ -13,10 +19,7 @@ namespace oop01
             _count = 0;
         }
 
-        public DeliveryCenter(string centerName)
-        {
-            CenterName = centerName;
-        }
+
         public Shipment this[int index]
         {
             get
@@ -101,6 +104,7 @@ namespace oop01
                 Console.WriteLine("No shipments available.");
                 return;
             }
+
             //Dynamic Binding
             for (int i = 0; i < _count; i++)
             {
@@ -119,6 +123,8 @@ namespace oop01
 
 
 
-    }
+
+
+}
 }
 
