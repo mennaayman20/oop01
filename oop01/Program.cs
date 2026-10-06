@@ -267,6 +267,16 @@ namespace oop01
 
         // G-NET-100-OOP-04
 
+        //Q1 Abstraction
+        #region a)  What is Abstraction in Object-Oriented Programming?
+        // Abstraction is a fundamental concept in object-oriented programming (OOP)
+        // that focuses on exposing only the essential features of an object while hiding the unnecessary details.
+        #endregion
+        #region b)  Why is abstraction considered one of the four pillars of OOP?
+        // Abstraction is considered one of the four pillars of OOP because it
+        // allows developers to create simplified models of complex systems, making it easier to understand, design, and maintain software.
+
+        #endregion
 
 
 
