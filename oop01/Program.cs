@@ -148,6 +148,19 @@ namespace oop01
         //Dynamic Binding: It occurs at runtime, where the method to be called is determined based on the actual object type. It is associated with method overriding and late binding.
         #endregion
 
+        //Q2  Sealed Classes and Methods
+        #region a)  What is the purpose of the sealed keyword when applied to a class?
+        // The sealed keyword is used to prevent a class from being inherited. When a class is marked as sealed, it cannot serve as a base class for any other class. This is useful when you want to restrict the inheritance hierarchy and ensure that the implementation of the class remains unchanged.
+        #endregion
+
+        #region b)  What is the difference between a sealed class and a sealed method?
+        // A sealed class is a class that cannot be inherited by any other class. When a class is marked as sealed, it cannot serve as a base class for any other class.
+        // A sealed method is a method that cannot be overridden by any subclass. When a method is marked as sealed, it can be overridden by subclasses, but those subclasses cannot override it again.
+        #endregion
+
+        #region c)  Can a sealed method be overridden? Why?
+        // No, a sealed method cannot be overridden. The purpose of sealing a method is to prevent further overriding in derived classes. This ensures that the implementation of the method remains fixed and cannot be changed by subclasses, which can be important for maintaining consistent behavior and preventing unintended side effects in the class hierarchy.
+        #endregion
 
 
 
