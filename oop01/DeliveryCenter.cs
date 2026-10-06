@@ -101,13 +101,23 @@ namespace oop01
                 Console.WriteLine("No shipments available.");
                 return;
             }
-
+            //Dynamic Binding
             for (int i = 0; i < _count; i++)
             {
                 _shipments[i].PrintShipment();
                 Console.WriteLine("------------------------------------------");
             }
         }
+
+
+
+
+
+
+
+
+
+
 
     }
 }
