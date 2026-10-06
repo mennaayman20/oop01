@@ -25,14 +25,20 @@ namespace oop01
         }
 
         //Override EstimatedCost
-        public override decimal EstimatedCost => base.EstimatedCost + ExtraFee;
-
+        public override decimal EstimatedCost => DeliveryFee + (Weight * 5) + ExtraFee;
 
         public override void PrintShipment()
         {
-            base.PrintShipment();
+
+            Console.WriteLine($"[Completed Shipment] Tracking Code: {TrackingCode}");
+            Console.WriteLine($"Description: {Description}");
+            Console.WriteLine($"Weight: {Weight} KG");
+            Console.WriteLine($"Delivery Fee: {DeliveryFee} EGP");
+            Console.WriteLine($"Estimated Cost: {EstimatedCost} EGP\n");
             Console.WriteLine($"Extra Fee: {ExtraFee:C}");
         }
+
+
 
 
     }

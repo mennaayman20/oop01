@@ -7,6 +7,8 @@
         public string _description;
         public decimal _weight;
         public decimal _deliveryFee;
+
+
         public DeliveryAddress Destination { get; set; }
         
         //default constructor
@@ -84,8 +86,8 @@
         }
 
         //Convert to a virtual property so each derived class can calculate its own cost.
-        public virtual decimal EstimatedCost => DeliveryFee + (decimal)(Weight * 5);
-
+        //public virtual decimal EstimatedCost => DeliveryFee + (decimal)(Weight * 5);
+        public abstract decimal EstimatedCost { get; }
 
         public Shipment(string trackingCode)
         {
@@ -132,26 +134,26 @@
         }
 
         //Convert to a virtual method.Every child class will override it
-        public virtual void PrintShipment()
-        {
-            Console.WriteLine($"Tracking Code: {TrackingCode}");
-            Console.WriteLine($"Description: {Description}");
-            Console.WriteLine($"Weight: {Weight} KG");
-            Console.WriteLine($"Delivery Fee: {DeliveryFee} EGP");
-            Console.WriteLine($"Destination: {Destination.GetFullAddress()}");
-            Console.WriteLine($"Estimated Cost: {EstimatedCost} EGP\n");
-        }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+        //public virtual void PrintShipment()
+        //{
+        //    Console.WriteLine($"Tracking Code: {TrackingCode}");
+        //    Console.WriteLine($"Description: {Description}");
+        //    Console.WriteLine($"Weight: {Weight} KG");
+        //    Console.WriteLine($"Delivery Fee: {DeliveryFee} EGP");
+        //    Console.WriteLine($"Destination: {Destination.GetFullAddress()}");
+        //    Console.WriteLine($"Estimated Cost: {EstimatedCost} EGP\n");
+        //}
+        public abstract void PrintShipment();
+
+
+
+
+
+
+
+
+
+
+
     }
 }

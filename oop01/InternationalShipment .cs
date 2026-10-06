@@ -48,8 +48,9 @@ namespace oop01
         }
 
         //Override EstimatedCost
-        public override decimal EstimatedCost => base.EstimatedCost + CustomsFee;
-        
+        public override decimal EstimatedCost => DeliveryFee + (Weight * 5) + CustomsFee;
+  
+
 
         public virtual void GenerateCustomsReport()
         {
@@ -60,7 +61,11 @@ namespace oop01
 
         public override void PrintShipment()
         {
-            base.PrintShipment();
+            Console.WriteLine($"[Completed Shipment] Tracking Code: {TrackingCode}");
+            Console.WriteLine($"Description: {Description}");
+            Console.WriteLine($"Weight: {Weight} KG");
+            Console.WriteLine($"Delivery Fee: {DeliveryFee} EGP");
+            Console.WriteLine($"Estimated Cost: {EstimatedCost} EGP\n");
             Console.WriteLine($"Destination Country: {DestinationCountry}");
             Console.WriteLine($"Customs Fee: {CustomsFee:C}");
         }
