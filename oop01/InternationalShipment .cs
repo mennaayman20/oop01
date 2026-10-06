@@ -32,6 +32,7 @@ namespace oop01
                 }
             }
         }
+        //Constructor Chaining (base constructor)
         public InternationalShipment(
             string trackingCode,
             string description,

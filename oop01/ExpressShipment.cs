@@ -17,6 +17,7 @@ namespace oop01
             }
 
         }
+        //Constructor Chaining(base constructor)
         public ExpressShipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination, decimal _extraFee)
             : base(trackingCode, description, weight, deliveryFee, destination)
         {
