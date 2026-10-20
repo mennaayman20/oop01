@@ -28,6 +28,14 @@ namespace oop01
             Console.WriteLine("Shipment System Initialized");
         }
 
+
+        // 6. Static Method to return the total shipments created
+        public static int GetTotalShipmentsCreated()
+        {
+            return TotalShipmentsCreated;
+        }
+
+
         // constructor overloading
         public Shipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination)
         {
