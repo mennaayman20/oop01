@@ -159,6 +159,12 @@ namespace oop01
             return (Shipment)this.MemberwiseClone();
         }
 
+        //  Shallow Copy Method using MemberwiseClone
+        public virtual Shipment ShallowCopy()
+        {
+            
+            return (Shipment)this.MemberwiseClone();
+        }
 
 
 

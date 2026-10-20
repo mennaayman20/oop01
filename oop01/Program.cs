@@ -408,8 +408,7 @@ namespace oop01
         //Part 02 — Practical
 
         StandardShipment shipment1 = new StandardShipment("SH001", "Books", 5.0m, 50.0m, new DeliveryAddress("Cairo", "Main St", 10));
-
-        Shipment shipment2 = shipment1;
+            Shipment shipment2 = shipment1;
 
             Console.WriteLine("--- Demonstration of Reference Assignment ---");
             Console.WriteLine($"Original Shipment Code: {shipment1.TrackingCode}");
@@ -429,10 +428,16 @@ namespace oop01
             Console.WriteLine($"Is shipment1 and the actualCopy the same object? {isTheCopyTheSameObject}");
 
 
+            Shipment shallowCopied = shipment1.ShallowCopy();
 
+            Console.WriteLine("--- Shallow Copy Demonstration ---");
+            Console.WriteLine($"Original Address City: {shipment1.Destination.City}");
+            Console.WriteLine($"Copied Address City: {shallowCopied.Destination.City}");
 
-
-
+            // تغيير العنوان من خلال الشحنة المنسوخة
+            // نعمل أوبجكت جديد للعنوان ونحطه في الـ Destination مباشرة
+            shallowCopied.Destination = new DeliveryAddress("Giza", shallowCopied.Destination.Street, shallowCopied.Destination.BuildingNumber);
+            Console.WriteLine($"Original Address City after change: {shipment1.Destination.City}"); // هتتغير لـ Giza!
 
 
 
