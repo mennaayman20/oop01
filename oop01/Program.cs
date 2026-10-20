@@ -314,6 +314,34 @@ namespace oop01
         // while copying its reference means both variables point to the same object in memory. 
         #endregion
 
+        //Shallow Copy vs Deep Copy
+
+        #region a) What is a Shallow Copy?
+        // A shallow copy creates a new object,
+        // but it copies the references of the original object's fields rather than duplicating the actual objects those references point to.
+        // As a result,changes made to the referenced objects in the shallow copy will affect the original object and vice versa.
+        #endregion
+
+        #region b) What is a Deep Copy?
+        // A deep copy creates a new object and recursively copies all objects referenced by the original object.
+        #endregion
+
+        #region c) What happens to reference-type members when a Shallow Copy is created?
+        // When a shallow copy is created, reference-type members of the original object are not duplicated;
+        // instead, the new object contains references to the same instances as the original object.
+        #endregion
+
+        #region d) What happens to reference-type members when a Deep Copy is created?
+        // When a deep copy is created, reference-type members of the original object are also duplicated,
+        #endregion
+
+        #region e) Give one situation where Deep Copy would be safer than Shallow Copy.
+        // Deep Copy would be safer than Shallow Copy in situations where the original object contains mutable reference-type members (like lists or other objects) that should not be shared between the original and the copied object.
+        // For example, if you have a class representing a shopping cart with a list of items, using a deep copy ensures that changes to the items in the copied cart do not affect the original cart.
+        #endregion
+
+
+
 
 
 
