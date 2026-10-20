@@ -363,8 +363,24 @@ namespace oop01
         // You cannot create an object from a static class.
         #endregion
 
+        //Extension Methods
 
+        #region a) What is an Extension Method?
+        // An extension method allows you to add new methods to an existing type without modifying its original source code or creating a derived class.
+        #endregion
 
+        #region b) What keyword must be used in the first parameter of an extension method?
+        // The this keyword must precede the first parameter type.
+        #endregion
+
+        #region c) Where must an extension method be declared?
+        //An extension method must be declared inside a static class, and the method itself must be static.
+        #endregion
+
+        #region d) Can an extension method access private members of the class it extends?
+        //No, an extension method cannot access private or protected members of the extended class;
+        //it can only interact with its public interface.
+        #endregion
 
 
 
