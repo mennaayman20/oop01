@@ -340,6 +340,33 @@ namespace oop01
         // For example, if you have a class representing a shopping cart with a list of items, using a deep copy ensures that changes to the items in the copied cart do not affect the original cart.
         #endregion
 
+        //Static Members
+        #region a) What is a static field, and how is it different from an instance field?
+        // A static field is a variable that belongs to the class itself rather than to any specific instance of the class. It is shared among all instances of the class,
+        // meaning that there is only one copy of the static field regardless of how many objects are created from the class. In contrast,
+        // an instance field is unique to each object created from the class, and each object has its own copy of the instance field.
+
+        #endregion
+
+        #region b) What is a static method? Can a static method directly access instance members?
+        // A static method is a method that belongs to the class itself rather than to any specific instance of the class.
+        // It can be called without creating an instance of the class.
+        #endregion
+
+        #region c) What is a static constructor, and when is it executed?
+        // A static constructor is a special constructor that is used to initialize static members of a class.
+        // It is executed automatically by the runtime before any static members are accessed or any instances of the class are created.
+        #endregion
+
+        #region d) What is a static class? Can you create an object from a static class?
+        // A static class is a class that cannot be instantiated. It can only contain static members.
+        // You cannot create an object from a static class.
+        #endregion
+
+
+
+
+
 
 
 
