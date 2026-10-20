@@ -19,6 +19,15 @@ namespace oop01
             TotalShipmentsCreated++;
         }
 
+        //Static Constructor
+        static Shipment()
+        {
+          
+            TotalShipmentsCreated = 0;
+
+            Console.WriteLine("Shipment System Initialized");
+        }
+
         // constructor overloading
         public Shipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination)
         {
