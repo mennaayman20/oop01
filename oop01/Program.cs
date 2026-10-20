@@ -440,7 +440,26 @@ namespace oop01
             Console.WriteLine($"Original Address City after change: {shipment1.Destination.City}"); // هتتغير لـ Giza!
 
 
+            //deep copy demonstration
+            StandardShipment originalShipment = new StandardShipment("SH001", "Laptop", 3.0m, 50.0m, new DeliveryAddress("Cairo", "Main St", 10));
 
+            // 2. عمل Deep Copy
+            Shipment deepCopied = originalShipment.DeepCopy();
+
+            Console.WriteLine("--- Deep Copy Demonstration ---");
+            Console.WriteLine($"Original Shipment Address: {originalShipment.Destination.City}"); // Cairo
+            Console.WriteLine($"Copied Shipment Address : {deepCopied.Destination.City}");     // Cairo
+
+            // 3. تغيير العنوان في الشحنة المنسوخة
+            Console.WriteLine("\nChanging copied shipment address to 'Giza'...");
+            deepCopied.Destination = new DeliveryAddress("Giza", deepCopied.Destination.Street, deepCopied.Destination.BuildingNumber);
+            // 4. إثبات أن الشحنة الأصلية لمتتأثر وبقيت "Cairo"
+            Console.WriteLine($"Original Shipment Address after change: {originalShipment.Destination.City}"); // هتفضل Cairo!
+            Console.WriteLine($"Copied Shipment Address after change : {deepCopied.Destination.City}");     // هتبقى Giza
+
+            // 5. إثبات أن الـ Destination objects منفصلين تماماً (النتيجة False)
+            bool areDestinationsTheSame = ReferenceEquals(originalShipment.Destination, deepCopied.Destination);
+            Console.WriteLine($"Same Destination Object? {areDestinationsTheSame}"); // False
 
 
 

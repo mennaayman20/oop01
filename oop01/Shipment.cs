@@ -166,7 +166,7 @@ namespace oop01
             return (Shipment)this.MemberwiseClone();
         }
 
-
+        public abstract Shipment DeepCopy();
 
     }
 }

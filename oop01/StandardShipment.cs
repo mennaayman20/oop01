@@ -31,5 +31,21 @@ namespace oop01
         }
 
         public override string GetTrackingStatus() => $"Shipment {TrackingCode} is Ready.";
+
+
+        public override Shipment DeepCopy()
+        {
+            DeliveryAddress clonedAddress = new DeliveryAddress(this.Destination.City, this.Destination.Street, this.Destination.BuildingNumber);
+
+            return new StandardShipment(this.TrackingCode, this.Description, this.Weight, this.DeliveryFee, clonedAddress);
+        }
+
+
+
+
+
+
+
+
     }
 }
