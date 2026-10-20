@@ -10,7 +10,7 @@ namespace oop01
 
 
         public string TrackingStatus { get; set; } = "In Transit";
-
+        partial void OnTrackingStatusChanged(string newStatus);
         //  إرجاع حالة التتبع
         public string GetTrackingStatus()
         {
@@ -24,6 +24,9 @@ namespace oop01
             {
                 TrackingStatus = newStatus;
                 Console.WriteLine($"Shipment {_trackingCode} tracking status updated to: {TrackingStatus}");
+
+                OnTrackingStatusChanged(newStatus);
+
             }
         }
 
