@@ -411,16 +411,22 @@ namespace oop01
 
         Shipment shipment2 = shipment1;
 
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
+            Console.WriteLine("--- Demonstration of Reference Assignment ---");
+            Console.WriteLine($"Original Shipment Code: {shipment1.TrackingCode}");
+            Console.WriteLine($"Assigned Shipment Code: {shipment2.TrackingCode}");
+
+            // عشان نثبت إنهم نفس الكائن في الذاكرة، بنستخدم ReferenceEquals:
+            bool areTheyTheSameObject = ReferenceEquals(shipment1, shipment2);
+            Console.WriteLine($"Are shipment1 and shipment2 the exact same object in memory? {areTheyTheSameObject}");
+            // النتيجة هتكون True لأنهم نفس الشيء بالضبط!
+
+
+            // 3. تجربة الـ Actual Copy (النسخ الحقيقي باستخدام CopyShipment):
+            Shipment actualCopy = shipment1.CopyShipment();
+
+            Console.WriteLine("\n--- Demonstration of Actual Copy ---");
+            bool isTheCopyTheSameObject = ReferenceEquals(shipment1, actualCopy);
+            Console.WriteLine($"Is shipment1 and the actualCopy the same object? {isTheCopyTheSameObject}");
 
 
 
@@ -433,20 +439,29 @@ namespace oop01
 
 
 
-        
-        
-        
-        
-        
-        
-        
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         }
 
 
 
 
-       
+
 
 
 
