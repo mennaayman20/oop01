@@ -153,8 +153,11 @@ namespace oop01
             return $"Shipment {TrackingCode} is Ready.";
         }
 
-
-
+        //  (CopyShipment)
+        public Shipment CopyShipment()
+        {
+            return (Shipment)this.MemberwiseClone();
+        }
 
 
 

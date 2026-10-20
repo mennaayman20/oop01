@@ -260,12 +260,13 @@ namespace oop01
             // استدعاء الدالة المختومة
             priorityInt.GenerateCustomsReport();
             // ملاحظة: إذا ورث كلاس آخر من PriorityInternationalShipment، لن يستطيع إعادة تعريف (override) لهذه الدالة.
-        }
-
-
-
-
-        // G-NET-100-OOP-04
+       
+        
+        
+        
+        
+        
+         // G-NET-100-OOP-04
 
         //Q1 Abstraction
         #region a)  What is Abstraction in Object-Oriented Programming?
@@ -404,9 +405,48 @@ namespace oop01
         //the compiler automatically removes the method declaration and any calls to it, resulting in zero performance overhead.
         #endregion
 
+        //Part 02 — Practical
+
+        StandardShipment shipment1 = new StandardShipment("SH001", "Books", 5.0m, 50.0m, new DeliveryAddress("Cairo", "Main St", 10));
+
+        Shipment shipment2 = shipment1;
+
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
 
 
 
+
+
+
+
+
+
+
+
+
+        
+        
+        
+        
+        
+        
+        
+        
+        }
+
+
+
+
+       
 
 
 
