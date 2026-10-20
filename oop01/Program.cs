@@ -1,4 +1,5 @@
-﻿using System;
+﻿using oop01.Extensions;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Numerics;
 using System.Security.Cryptography;
@@ -468,6 +469,10 @@ namespace oop01
             DeliveryUtilities.PrintSystemTitle();
             DeliveryUtilities.PrintSeparator();
 
+
+            // استدعاء الـ Extension Methods وكأنها جزء أساسي من الكلاس
+            Console.WriteLine(shipment1.GetSummary());
+            Console.WriteLine($"SH001 Is Delivered: {shipment1.IsDelivered()}");
 
 
 

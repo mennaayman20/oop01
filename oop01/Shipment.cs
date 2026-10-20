@@ -10,7 +10,7 @@ namespace oop01
         public decimal _deliveryFee;
 
         public static int TotalShipmentsCreated = 0;
-
+        public string TrackingStatus { get; set; } = "In Transit";
         public DeliveryAddress Destination { get; set; }
         
         //default constructor
