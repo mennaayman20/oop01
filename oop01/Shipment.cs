@@ -9,11 +9,15 @@ namespace oop01
         public decimal _weight;
         public decimal _deliveryFee;
 
+        public static int TotalShipmentsCreated = 0;
 
         public DeliveryAddress Destination { get; set; }
         
         //default constructor
-        public Shipment() { }
+        public Shipment() {
+
+            TotalShipmentsCreated++;
+        }
 
         // constructor overloading
         public Shipment(string trackingCode, string description, decimal weight, decimal deliveryFee, DeliveryAddress destination)
@@ -23,6 +27,8 @@ namespace oop01
             _weight = weight > 0 ? weight : 1;
             _deliveryFee = deliveryFee > 0 ? deliveryFee : 50;
             Destination = destination;
+
+            TotalShipmentsCreated++;
         }
 
         //Method Overloading — add two versions of the weight-update method:
@@ -167,6 +173,23 @@ namespace oop01
         }
 
         public abstract Shipment DeepCopy();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
 }

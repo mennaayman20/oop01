@@ -461,7 +461,8 @@ namespace oop01
             bool areDestinationsTheSame = ReferenceEquals(originalShipment.Destination, deepCopied.Destination);
             Console.WriteLine($"Same Destination Object? {areDestinationsTheSame}"); // False
 
-
+            //Static Field
+            Console.WriteLine($"Total Shipments Created: {Shipment.TotalShipmentsCreated}");
 
 
 
