@@ -298,6 +298,22 @@ namespace oop01
 
         //Part 02 — Practical
 
+        // G-NET-100-OOP-05
+        //Object Copying
+        #region a) What happens when you assign one object variable to another object variable?
+        // When you assign one object variable to another object variable, both variables refer to the same object in memory.
+        // Any changes made through one variable will affect the other
+        #endregion
+
+        #region b) Does assigning one object to another create a new object? Explain.
+        // No, assigning one object to another does not create a new object. Both variables refer to the same object in memory.
+        #endregion
+
+        #region c) What is the difference between copying an object and copying its reference?
+        // Copying an object creates a new instance of the object with the same values,
+        // while copying its reference means both variables point to the same object in memory. 
+        #endregion
+
 
 
 
