@@ -464,8 +464,9 @@ namespace oop01
             //Static Field
             Console.WriteLine($"Total Shipments Created: {Shipment.TotalShipmentsCreated}");
 
-
-
+            //static class
+            DeliveryUtilities.PrintSystemTitle();
+            DeliveryUtilities.PrintSeparator();
 
 
 
