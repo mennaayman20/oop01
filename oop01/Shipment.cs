@@ -1,7 +1,7 @@
 ﻿using oop01.interfaces;
 namespace oop01
 {
-    public abstract class Shipment : ITrackable
+    public abstract partial class Shipment : ITrackable
     {
         // Private Fields
         public string _trackingCode;
@@ -10,7 +10,7 @@ namespace oop01
         public decimal _deliveryFee;
 
         public static int TotalShipmentsCreated = 0;
-        public string TrackingStatus { get; set; } = "In Transit";
+      
         public DeliveryAddress Destination { get; set; }
         
         //default constructor
@@ -171,10 +171,6 @@ namespace oop01
 
 
         // Implementing the ITrackable interface method
-        public virtual string GetTrackingStatus()
-        {
-            return $"Shipment {TrackingCode} is Ready.";
-        }
 
         //  (CopyShipment)
         public Shipment CopyShipment()
