@@ -383,6 +383,30 @@ namespace oop01
         #endregion
 
 
+        //Partial Classes and Partial Methods
+
+        #region a) What is a Partial Class?
+        //A partial class allows the definition of a single class to be split across multiple files using the partial keyword,
+        //which are then combined into a single class at compile time.
+        #endregion
+
+        #region b) Why would a developer split one class into multiple files?
+        //To organize large codebases, improve readability,
+        //and separate automatically generated code from custom handwritten code.
+        #endregion
+
+        #region c) What is a Partial Method?
+        //A partial method is a method whose signature is declared in one part of a partial class,
+        //and its optional implementation can be provided in another part (or omitted entirely).
+        #endregion
+
+        #region d) What happens if a declared partial method has no implementation?
+        //the compiler automatically removes the method declaration and any calls to it, resulting in zero performance overhead.
+        #endregion
+
+
+
+
 
 
 
